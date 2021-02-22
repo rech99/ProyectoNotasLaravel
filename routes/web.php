@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,9 +31,9 @@ Route:: get('agregar', function(){
 Route:: get('notas/{id}/ediar', function($id) {
     $notas = DB::table('notas')
     ->where('id', $id)
-    -> first();
+    ->first();
 
-    return 'Aqui se van a editar las notas' .$id;
+    return view('editar', ['notas' => $notas]);
 }) -> name('notas.edit');
 
 
