@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Notas;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -15,21 +16,21 @@ class NotasSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('notas') -> insert([
+        Notas::create([
             'titulo' => '¿Para que sirve composer?',
             'contenido' => 'Con Composer podemos instalar y actualizar frameworks como Laravel 
                         o Symfony, así como componentes para generar PDF, procesar pagos con tarjetas, manipular imágenes y mucho más. ',
         ]);
 
 
-        DB::table('notas') -> insert([
+        Notas::create([
             'titulo' => 'Instalacion de Laravel',
             'contenido' => File::get(__DIR__.'/notas/install.html'),
         ]);
 
 
 
-        DB::table('notas') -> insert([
+        Notas::create([
             'titulo' => 'Rutas y JSON',
             'contenido' => 'Recuerda que si retornas un arreglo en una ruta, Laravel lo va a convertir en JSON automáticamente:
 
@@ -51,14 +52,14 @@ class NotasSeeder extends Seeder
 
 
 
-        DB::table('notas') -> insert([
+        Notas::create([
             'titulo' => 'Front Controller',
             'contenido' => 'Front Controller es un patrón de arquitectura donde un controlador maneja todas las solicitudes o peticiones a un sitio web. ',
         ]);
 
 
 
-        DB::table('notas') -> insert([
+        Notas::create([
             'titulo' => 'Cambia el formato de parámetros dinámicos',
             'contenido' => 'Puedes colocar el siguiente código en el método boot de app/Providers/RouteServiceProvider.php para restringir cualquier parámetro de las rutas a un formato numérico:
 
