@@ -30,4 +30,5 @@ Route::post('crear', 'App\Http\Controllers\NotasController@crear' )->name('notas
 
 Route:: get('notas/{id}/ediar', 'App\Http\Controllers\NotasController@editar' ) -> name('notas.edit');
 
+Route:: put('notas/{notas}/ediar', 'App\Http\Controllers\NotasController@update' ) -> name('notas.update');
 

@@ -39,4 +39,13 @@ class NotasController extends Controller
         return view('welcome');
     }
 
+    public function update (Notas $notas, Request $request) {
+
+        $notas-> update([
+            'titulo'=> $request -> input('title'),
+            'contenido' => $request->input('content'),
+        ]);
+
+        return redirect('/notas');
+    }
 }
